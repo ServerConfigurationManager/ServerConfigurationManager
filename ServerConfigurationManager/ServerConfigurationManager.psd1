@@ -4,7 +4,7 @@
     RootModule        = 'ServerConfigurationManager.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0.0'
+    ModuleVersion     = '1.0.1'
 
     # ID used to uniquely identify this module
     GUID              = '7a54c764-8e5b-4355-ba6d-34e82cf024bb'
@@ -41,16 +41,16 @@
             Tags = @('Configuration')
 
             # A URL to the license for this module.
-            # LicenseUri = ''
+            LicenseUri = 'https://github.com/ServerConfigurationManager/ServerConfigurationManager/blob/master/LICENSE'
 
             # A URL to the main website for this project.
-            # ProjectUri = ''
+            ProjectUri = 'https://serverconfigurationmanager.github.io/'
 
             # A URL to an icon representing this module.
             # IconUri = ''
 
             # ReleaseNotes of this module
-            # ReleaseNotes = ''
+            ReleaseNotes = 'https://github.com/ServerConfigurationManager/ServerConfigurationManager/blob/master/ServerConfigurationManager/changelog.md'
         } # End of PSData hashtable
 
     } # End of PrivateData hashtable

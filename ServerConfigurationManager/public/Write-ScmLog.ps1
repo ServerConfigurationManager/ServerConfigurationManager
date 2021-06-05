@@ -56,9 +56,16 @@
     If ($Type -eq 'Error') { Write-Warning $Message }
     else { Write-Verbose $Message }
     try {
-        $eventlog = [System.Diagnostics.EventLog]::GetEventLogs().Where{ $_.Log -eq "ServerConfigurationManager" }[0]
-        $eventlog.Source = $Source
-        $eventlog.WriteEntry($Message, $Type, $EventId)
+        if ($script:windowsLog) {
+            $eventlog = [System.Diagnostics.EventLog]::GetEventLogs().Where{ $_.Log -eq "ServerConfigurationManager" }[0]
+            $eventlog.Source = $Source
+            $eventlog.WriteEntry($Message, $Type, $EventId)
+        }
+        else {
+            foreach ($line in $Message -split "`n") {
+                logger "$Source $Type $EventId $line"
+            }
+        }
     }
     catch {
         # Do nothing if it fails
